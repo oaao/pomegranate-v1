@@ -1,0 +1,4 @@
+- attach name via corresponding typeid from csv
+- further separate into buy and sell
+- sort sells descending; sort buys ascending
+- add stuff like volume, median price, etc.
