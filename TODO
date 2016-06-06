@@ -1,4 +1,21 @@
+AFTER TYPEID-SORT:
+
 - attach name via corresponding typeid from csv
+
+- attach market info (requires new lookup) such that
+    data =
+        [
+            [
+                {order1}, {order2}...
+            ]
+            [   {'volume:' 0, 'median:' 0, etc.}
+            ]
+        ]
+
 - further separate into buy and sell
+
 - sort sells descending; sort buys ascending
+
 - add stuff like volume, median price, etc.
+
+- introduce classes
