@@ -12,10 +12,6 @@ AFTER TYPEID-SORT:
             ]
         ]
 
-- further separate into buy and sell
-
-- sort sells descending; sort buys ascending
-
-- add stuff like volume, median price, etc.
+- sort sells descending; sort buys ascending?
 
 - introduce classes

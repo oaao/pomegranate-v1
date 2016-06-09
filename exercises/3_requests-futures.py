@@ -37,9 +37,6 @@ def market_import():
     data_res = (session.get(x).result().json() for x in url_set)
     data_items = [x for i in data_res for x in i['items']]
     print("--- %s seconds ---\n" % (time.time() - t1))
-    '''for pages in range(1, data_pages+1, 1):
-        data_append = requests.get(url_base + '?page=' + str(pages)).json()
-        data_items += data_append['items']'''
     return data_items, data_configs
 
 orders_raw, orders_config = market_import()

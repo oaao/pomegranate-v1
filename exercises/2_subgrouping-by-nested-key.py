@@ -1,3 +1,4 @@
+# example dict
 data = [
     {'type': 'a', 'v1': 'off', 'v2': '1'},
     {'type': 'b', 'v1': 'off', 'v2': '1'},
@@ -19,11 +20,18 @@ def sort_types(my_list, my_key):
     return new_dict
 
 
-'''def print_dict(my_list):
+def print_dict(my_list):
     for i in my_list:
-        print(i, my_list[i])'''
+        print(i, my_list[i])
 
-sort_type_param = 'type'
-data_sorted_type = sort_types(data, sort_type_param)
-# print_dict(data_sorted_type)
-print(data_sorted_type)
+sort_param = 'type'
+data_sorted_type = sort_types(data, sort_param)
+
+data_sorted_subtype = {}
+sort_subtype_param = 'v1'
+
+for k,v in data_sorted_type.items():
+    sorted_subtype_value = sort_types(v, sort_subtype_param)
+    data_sorted_subtype[k] = [sorted_subtype_value]
+
+print(data_sorted_subtype)
