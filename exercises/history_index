@@ -1,0 +1,13 @@
+PREPARATORY EXERCISES
+
+A history of abstracted exercises that were necessary learning tools for the main program.
+Sorted ascending by date of completion.
+
+1. 2016-06-01 // DST
+To manually regroup dictionary entries by a common key sourced from entries' values. [b. 2016-06-01]
+
+2. 2016-06-02 // LIB
+To work with the requests_futures and concurrent.futures libraries to make asynchronous requests. [b. 2016-06-02]
+
+3. 2016-06-09 // DST
+To correctly operate within nested dict/list structures (after a bit of needless struggle). [b. 2016-06-02]
