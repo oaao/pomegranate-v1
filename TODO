@@ -1,17 +1,4 @@
-AFTER TYPEID-SORT:
+TO DO
 
-- attach name via corresponding typeid from csv
-
-- attach market info (requires new lookup) such that
-    data =
-        [
-            [
-                {order1}, {order2}...
-            ]
-            [   {'volume:' 0, 'median:' 0, etc.}
-            ]
-        ]
-
-- sort sells descending; sort buys ascending?
-
-- introduce classes
+- redo market history lookup to preserve typeID for each instance
+- decide where typeID:Name correlation belongs for _dangling_CSV.py (likely only for display, at end-point)
