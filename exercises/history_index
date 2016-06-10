@@ -11,3 +11,6 @@ To work with the requests_futures and concurrent.futures libraries to make async
 
 3. 2016-06-09 // DST
 To correctly operate within nested dict/list structures (after a bit of needless struggle). [b. 2016-06-02]
+
+4. 2016-06-10 // DST
+To open a CSV in a given (parent or sibling) directory and create a new dictionary out of certain rows.
