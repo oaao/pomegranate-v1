@@ -102,10 +102,23 @@ def market_distill(raw_list, configs):
     for k,v in data_grouped_type.items():
         buysell_grouped = group_dictvalue(v, sort_choice)
         data_grouped_buysell[k] = [buysell_grouped]
-    print('MARKET_DISTILL: %s order groups separated.'
+    print('MARKET_DISTILL: %s order sets separated.'
           % (c_str(len(data_grouped_buysell.values()))))
     print("--- %s seconds ---\n" % (time.time() - t_buysell))
-    return data_grouped_buysell
+    t_station = time.time()
+    print('MARKET_DISTILL: Making each order set into a subgroup of its stationID.')
+    sort_choice = 'stationID'
+    data_grouped_station = {}
+    for k,v in data_grouped_buysell.items():
+        for order_pair in v:
+            for order_type, order in order_pair.items():
+                for attribute in order:
+                    id_subgroup = attribute.pop(sort_choice)
+        data_grouped_station[k] = {id_subgroup: v}
+    print('MARKET_DISTILL: %s order sets grouped under their corresponding stationID.'
+          % (c_str(len(data_grouped_station.values()))))
+    print("--- %s seconds ---\n" % (time.time() - t_station))
+    return data_grouped_station
 
 
 def market_context(raw_list):

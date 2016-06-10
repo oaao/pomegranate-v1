@@ -4,8 +4,10 @@ from concurrent.futures import ThreadPoolExecutor
 from requests_futures.sessions import FuturesSession
 import arrow
 import json
+import csv
+from os import path
 
-c_str = lambda x: "{:,}".format(x)
+base_dir = path.dirname(path.realpath('__file__'))
 
 
 def market_configs(hub_spec):
@@ -44,6 +46,13 @@ def group_dictvalue(raw_list, dictvalue):
     return new_dict
 
 
+def csv_makedict(f_dir, f_name, k, v, enc):
+    with open(path.join(f_dir, f_name), mode='r', encoding=enc) as csv_input:
+        csv_read = csv.reader(csv_input)
+        csv_dict = {rows[k]: rows[v] for rows in csv_read}
+        return csv_dict
+
+
 def market_import(hub_spec):
     data_configs = market_configs(hub_spec)
     hub_regionid = str(data_configs[0])
@@ -71,25 +80,42 @@ def market_distill(raw_list, configs):
     for k,v in data_grouped_type.items():
         buysell_grouped = group_dictvalue(v, sort_choice)
         data_grouped_buysell[k] = [buysell_grouped]
-    return data_grouped_buysell
+    sort_choice = 'stationID'
+    data_grouped_station = {}
+    for k,v in data_grouped_buysell.items():
+        for order_pair in v:
+            for order_type, order in order_pair.items():
+                for attribute in order:
+                    id_subgroup = attribute.pop(sort_choice)
+        data_grouped_station[k] = {id_subgroup: v}
+    return data_grouped_station
 
 
 def market_context(raw_list):
+    context_namelist = csv_makedict('resources', 'invTypes_small.csv', 0, 2, 'utf-8')
     # take out the station value from each
     # make a new list that contains:
     # - name that corresponds w/ ID
     # - station id
     # - pricing/volume info
     # add to dict such that {'typeid': [[orders],[context]]
-    pass
+    data_contextualised = ''
+    return data_contextualised
 
 
-def db_write():
+def write_json(data_input):
+    print('WRITE_JSON: Writing JSON to file.')
+    with open(path.join('json', "orderbook_" + str(time.time()) + ".txt"), "w") as f_output:
+        json.dump(data_input, f_output, indent=4)
+
+
+def write_db():
     # write data structure to database
     pass
 
-orders_raw, orders_config = market_import('jita')
-orders_structured = market_distill(orders_raw, orders_config)
 
-with open("json" + str(time.time()) + ".txt", "w") as f_output:
-    json.dump(orders_structured, f_output, indent=4)
+orders_raw, orders_config = market_import('rens')
+orders_structured = market_distill(orders_raw, orders_config)
+orders_contextualised = market_context(orders_structured)
+
+write_json(orders_structured)
