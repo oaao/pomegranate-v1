@@ -26,7 +26,7 @@ def url_format(region_id, req_type):
     if req_type is 'orders':
         url_result = url_parent + region_id + '/orders/all/'
     elif req_type is 'context':
-        url_result = url_parent + region_id + '/types/'
+        url_result = url_parent + region_id + '/inventory/types/'
     return url_result
 
 

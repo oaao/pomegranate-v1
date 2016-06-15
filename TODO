@@ -1,4 +1,4 @@
 TO DO
 
-- redo market history lookup to preserve typeID for each instance
+- redo market history lookup to preserve typeID for each instance (use requests' .url attribute)
 - decide where typeID:Name correlation belongs for _dangling_CSV.py (likely only for display, at end-point)
