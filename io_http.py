@@ -16,8 +16,8 @@ def url_format(region_id, req_type):
 
 
 def url_async(url_list, worker_limit):
-    if worker_limit > 10:
-        worker_limit = 10
+    worker_limit = 10 if worker_limit > 10 else worker_limit
     session = FuturesSession(executor=ThreadPoolExecutor(max_workers=worker_limit))
+    # the line below mistakenly re-serialises the operation and should be fixed immediately JUST SAYIN
     response = (session.get(x).result().json() for x in url_list)
     return response
