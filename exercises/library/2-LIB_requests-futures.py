@@ -1,3 +1,9 @@
+# This example is a misuse/misunderstanding of futures, as the expression:
+# (session.get(x).result().json() for x in url_set)
+# re-serialises the asynchronous operation. This is confirmed through the concurrency graph of the program, which
+# shows each additional thread spawning once the prior has finished processing. A new exercise will be completed
+# to accommodate valid async.
+
 import time
 import requests
 from concurrent.futures import ThreadPoolExecutor
@@ -42,3 +48,4 @@ def market_import():
 orders_raw, orders_config = market_import()
 with open("json" + str(time.time()) + ".txt", "w") as f_output:
     json.dump(orders_raw, f_output, indent=4)
+
