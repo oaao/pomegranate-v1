@@ -1,3 +1,11 @@
+# read and process raw data, store processed data
+
+# using config(?) and io_db, calculate the following and store its end-result data to db:
+# - raw profitability ("hypothetical")
+# - competitiveness of orders per typeID per hub
+# - END-RESULT [DB]: competition-factored profitability ("actual")
+# - END-RESULT [DB]: per-orderID update behaviours
+
 import config
 import io_http
 import arrow
@@ -28,9 +36,9 @@ def market_import(hub_spec):
     return data_items, data_configs
 
 
-def market_distill(raw_list, config):
+def market_distill(raw_list, configs):
     data_total = raw_list
-    hub_stationid = config[1]
+    hub_stationid = configs[1]
     data_hubonly = [x for x in data_total if hub_stationid == x['stationID']]
     data_timestamp = data_hubonly
     for i in range(0, len(data_hubonly)):
@@ -54,9 +62,9 @@ def market_distill(raw_list, config):
     return data_grouped_station
 
 
-def market_context(raw_list, config):
+def market_context(raw_list, configs):
     data_distilled = raw_list
-    hub_regionid = str(config[0])
+    hub_regionid = str(configs[0])
     type_ids = data_distilled.keys()
     url_context = io_http.url_format(hub_regionid, 'context')
     url_set = [url_context + str(x) + '/history/' for x in type_ids]

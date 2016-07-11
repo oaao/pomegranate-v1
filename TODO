@@ -1,10 +1,7 @@
 TO DO
 
-- manual rate limiting?
-- implement logging module instead of params
 - look at fuzzysteve thing
 - use requests url params wherever possible
 - consider implementing DB early
 - redo market history lookup to preserve typeID for each instance (use requests' .url attribute)
 - decide where typeID:Name correlation belongs for _dangling_CSV.py (likely only for display, at end-point)
-- fix problematic implementation of url_async(), as (foo for foo in bar) re-serialises it
