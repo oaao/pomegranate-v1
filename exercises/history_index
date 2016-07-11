@@ -3,29 +3,29 @@ PREPARATORY EXERCISES
 A history of abstracted exercises that were necessary learning tools for the main program.
 Sorted ascending by date of completion.
 
-1. 2016-06-01 // DST
+001. 2016-06-01 // DST
 To manually regroup dictionary entries by a common key sourced from entries' values. [b. 2016-06-01]
 
-2. 2016-06-02 // LIB
+002. 2016-06-02 // LIB
 To work with the requests_futures and concurrent.futures libraries to make asynchronous requests. [b. 2016-06-02]
 
-3. 2016-06-09 // DST
+003. 2016-06-09 // DST
 To correctly operate within nested dict/list structures (after a bit of needless struggle). [b. 2016-06-02]
 
-4. 2016-06-10 // DST
+004. 2016-06-10 // DST
 To open a CSV in a given (parent or sibling) directory and create a new dictionary out of certain rows. [b. 2016-06-10]
 
-5. 2016-06-10 // DST
+005. 2016-06-10 // DST
 To group subgroups inside a dict by a value (using loops). [b. 2016-06-10]
 
-6. 2016-07-07 // LIB
+006. 2016-07-07 // LIB
 To use itertools' groupby() function to replace manual for-loop code. [b. 2016-06-30]
 
-7. 2016-06-30[A,B], [C] // DST
+007. 2016-06-30[A,B], [C] // DST
 To try different ways ["manual", enter/exit methods, function decorators] to measure process duration. [b. 2016-06-30]
 
-8. 2016-07-06 // PTC
+008. 2016-07-06 // PTC
 To test HTTP responses and evaluate corresponding results (if any) from API data. [b. 2016-07-06]
 
-9. 2016-07-11 // LIB
+009. 2016-07-11 // LIB
 To correctly implement asynchronous data *retrieval* with requests-futures., [b. 2016-07-11]

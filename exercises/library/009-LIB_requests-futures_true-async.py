@@ -1,5 +1,5 @@
 # correct asynchronous implementation of requests-futures
-# as opposed to /exercises/2-LIB_requests-futures.py
+# as opposed to /exercises/002-LIB_requests-futures.py
 
 import logging
 import sys
