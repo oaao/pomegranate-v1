@@ -18,7 +18,7 @@ To open a CSV in a given (parent or sibling) directory and create a new dictiona
 5. 2016-06-10 // DST
 To group subgroups inside a dict by a value (using loops). [b. 2016-06-10]
 
-6. // LIB
+6. 2016-07-07 // LIB
 To use itertools' groupby() function to replace manual for-loop code. [b. 2016-06-30]
 
 7. 2016-06-30[A,B], [C] // DST
@@ -26,3 +26,6 @@ To try different ways ["manual", enter/exit methods, function decorators] to mea
 
 8. 2016-07-06 // PTC
 To test HTTP responses and evaluate corresponding results (if any) from API data. [b. 2016-07-06]
+
+9. 2016-07-11 // LIB
+To correctly implement asynchronous data *retrieval* with requests-futures., [b. 2016-07-11]

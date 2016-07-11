@@ -19,5 +19,5 @@ for k,v in grouped_data:
 
 print(new_data)
 
-# issue: ['type'] remains inside new dict, because it wasn't popped; will shit up DB
+# issue: ['type'] remains inside new dict because it wasn't popped; will shit up DB
 # solution: try collections.defaultdict()
