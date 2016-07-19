@@ -1,5 +1,7 @@
 # pomegranate
 
+WIP -
+
 For a market analysis tool,
 
 To get data from multiple api endpoints, store them in respective DBs, combine/filter/reorganise that data as per configs, store that secondary data as DB, and monitor its change over time
