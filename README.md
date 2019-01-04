@@ -1,6 +1,6 @@
 # pomegranate
 
-WIP -
+[deprecated] First learning project.
 
 For a market analysis tool,
 
